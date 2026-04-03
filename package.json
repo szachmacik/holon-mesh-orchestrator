@@ -1,0 +1,17 @@
+{
+  "name": "holon-mesh-orchestrator",
+  "version": "1.0.0",
+  "description": "Holon Neural Mesh — Smart Router & Orchestrator",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "ws": "^8.16.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

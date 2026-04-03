@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  holon-mesh-orchestrator:
+    build: .
+    container_name: holon-mesh-orchestrator
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_KEY=${SUPABASE_KEY}
+      - CORS_ORIGIN=*
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.mesh.rule=Host(`mesh.ofshore.dev`)"
+      - "traefik.http.routers.mesh.tls=true"
+      - "traefik.http.routers.mesh.tls.certresolver=letsencrypt"
+      - "traefik.http.services.mesh.loadbalancer.server.port=3001"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3001/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
