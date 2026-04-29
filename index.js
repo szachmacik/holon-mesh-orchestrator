@@ -1,3 +1,10 @@
+// HOLON-META: {
+//   purpose: "HOLON orchestrator - agent coordination",
+//   agents_notes: "KAPITAN: Strategic decisions | HEALER: Auto-recovery",
+//   cost_impact: "Token optimization via Code Memory Protocol",
+//   wiki: "32d6d069-74d6-8164-a6d5-f41c3d26ae9b"
+// }
+
 /**
  * Holon Neural Mesh Orchestrator v1.0
  * =====================================
